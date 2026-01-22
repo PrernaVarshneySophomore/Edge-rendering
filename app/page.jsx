@@ -1,16 +1,18 @@
-'use client';
-import { useEffect, useState } from 'react';
-import ProductCard from './components/ProductCard';
+// app/page.jsx
+export const runtime = "edge";
 
-export default function HomePage() {
-  const [products, setProducts] = useState([]);
+import ProductCard from "./components/ProductCard";
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.error(err));
-  }, []);
+async function getProducts() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/products`,
+    { cache: "no-store" }
+  );
+  return res.json();
+}
+
+export default async function HomePage() {
+  const products = await getProducts();
 
   return (
     <div className="grid-container">
