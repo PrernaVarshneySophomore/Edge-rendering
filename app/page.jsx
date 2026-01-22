@@ -15,10 +15,14 @@ export default async function HomePage() {
   const products = await getProducts();
 
   return (
-    <div className="grid-container">
-      {products.map((product) => (
-        <ProductCard key={product._id} product={product} />
-      ))}
-    </div>
+    <>
+      {console.log(`Runtime: ${typeof EdgeRuntime !== "undefined" ? "Edge" : "Node"}`)}
+      <div className="grid-container">
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
+      </div>
+    </>
+    
   );
 }
