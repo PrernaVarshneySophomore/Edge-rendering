@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import '../styles/globals.css'; // Pure CSS
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   title: 'Edge E-Commerce',
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main className="main-content">{children}</main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
