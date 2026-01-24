@@ -37,3 +37,8 @@
   color: #FFD700; /* golden */
   margin: 0 12px 12px 12px;
 }
+
+.product-link {
+  text-decoration: none;
+  /* color: inherit; */
+}

@@ -16,7 +16,7 @@ export default async function HomePage() {
 
   return (
     <>
-      {console.log(`Runtime: ${typeof EdgeRuntime !== "undefined" ? "Edge" : "Node"}`)}
+      {/* {console.log(`Runtime: ${typeof EdgeRuntime !== "undefined" ? "Edge" : "Node"}`)} */}
       <div className="grid-container">
         {products.map((product) => (
           <ProductCard key={product._id} product={product} />
